@@ -11,9 +11,9 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dicecup portrait"
+        android:text="Dicecup landscape"
         android:layout_centerHorizontal="true"
-        android:textSize="27dp"
+        android:textSize="28dp"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
          />

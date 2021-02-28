@@ -1,20 +1,24 @@
 package com.example.dices
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val HISTORY_NAME = "history"
+
+    private val TAG: String = "asd"
     val mGenerator = Random()
 
     val diceIds = arrayOf(0, R.drawable.d1, R.drawable.d2, R.drawable.d3, R.drawable.d4
                                                 , R.drawable.d5, R.drawable.d6)
 
     val mHistory = mutableListOf<Pair<Int, Int>>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,5 +48,10 @@ class MainActivity : AppCompatActivity() {
     fun clearHistory(view: View) {
         mHistory.clear()
         updateHistory()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG, "History Saved")
     }
 }
