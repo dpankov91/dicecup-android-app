@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".GUI.MainActivity">
 
     <TextView
         android:id="@+id/tvHeader"
@@ -13,11 +14,11 @@
         android:layout_height="wrap_content"
         android:text="Dicecup landscape"
         android:layout_centerHorizontal="true"
-        android:textSize="28dp"
+        android:textSize="27dp"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
-         />
-    <LinearLayout
+        />
+    <RelativeLayout
         android:id="@+id/diceboard"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
@@ -34,41 +35,102 @@
             android:maxHeight="100dp"
             android:scaleType="centerInside"
             android:adjustViewBounds="true"
-            android:src="@drawable/d4"/>
+            android:src="@drawable/d1"/>
         <ImageView
             android:id="@+id/imgD2"
+            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:maxHeight="100dp"
+            android:layout_toRightOf="@id/imgD1"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/d2"/>
+        <ImageView
+            android:id="@+id/imgD3"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:maxHeight="100dp"
+            android:layout_below="@id/imgD1"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/d3"/>
+        <ImageView
+            android:id="@+id/imgD4"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:maxHeight="100dp"
+            android:layout_toRightOf="@id/imgD3"
+            android:layout_below="@id/imgD2"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/d4"/>
+        <ImageView
+            android:id="@+id/imgD5"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:maxHeight="100dp"
+            android:layout_below="@id/imgD3"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/d5"/>
+        <ImageView
+            android:id="@+id/imgD6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:maxHeight="100dp"
+            android:visibility="invisible"
+            android:layout_toRightOf="@id/imgD5"
+            android:layout_below="@id/imgD4"
             android:scaleType="centerInside"
             android:adjustViewBounds="true"
             android:src="@drawable/d6"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/btnRoll"
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Roll"
-        android:layout_below="@id/diceboard"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:onClick="onClickRoll"/>
-    <TextView
-        android:id="@+id/tvHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnRoll"
-        android:layout_centerHorizontal="true"
-        android:text="History"/>
+        android:layout_below="@id/diceboard">
+        <Button
+            android:id="@+id/btnRoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roll"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:onClick="onClickRoll"/>
+        <Spinner
+            android:id="@+id/numbersSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/btnRoll"/>
+        <TextView
+            android:id="@+id/tvHistory"
+            android:layout_below="@+id/btnRoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnClear"
+            android:layout_centerHorizontal="true"
+            android:text="History"/>
 
 
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="clear"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="clearHistory"/>
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clear"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="clearHistory"/>
+    </RelativeLayout>
+
+
 </RelativeLayout>

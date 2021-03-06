@@ -1,4 +1,4 @@
 package com.example.dices.Model
 
-class BEDice {
+class BEDice (var time: String, var results: List<Int> ){
 }

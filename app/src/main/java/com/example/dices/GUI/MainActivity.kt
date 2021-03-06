@@ -1,6 +1,6 @@
-package com.example.dices
+package com.example.dices.GUI
 
-import android.content.res.Configuration
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,15 +8,14 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Spinner
 import androidx.annotation.RequiresApi
+import com.example.dices.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class   MainActivity : AppCompatActivity() {
 
     private val HISTORY_NAME = "history"
 
@@ -26,13 +25,17 @@ class MainActivity : AppCompatActivity() {
     val diceIds = arrayOf(0, R.drawable.d1, R.drawable.d2, R.drawable.d3, R.drawable.d4
                                                 , R.drawable.d5, R.drawable.d6)
 
-    val mHistory = mutableListOf<Pair<Int, Int>>()
-
-    val hhistory = mutableListOf<Pair<String, List<Int>>>()
+    val history = mutableListOf<Pair<String, List<Int>>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        btnGoToHistory.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
+
 
         var numbers = arrayOf (1, 2, 3, 4, 5, 6)
 
@@ -112,65 +115,44 @@ class MainActivity : AppCompatActivity() {
         imgD5.setImageResource(diceIds[d5])
         imgD6.setImageResource(diceIds[d6])
 
-        //if(mHistory.size >= 5)
-           // mHistory.removeAt(0)
-        if(hhistory.size >= 5){
-            hhistory.removeAt(0)
+        if(history.size >= 5){
+            history.removeAt(0)
         }
 
-        if(numbersSpinner.selectedItemPosition === 0 ) {
-            val now = LocalDateTime.now()
-            var formatter = DateTimeFormatter
-                    .ofPattern("HH:mm:ss")
-            hhistory.add(Pair(formatter.format(now), listOf(d1)))
+        when (numbersSpinner.selectedItemPosition) {
+            0 -> history.add(Pair(getCurrentTime(), listOf(d1)))
+            1 -> history.add(Pair(getCurrentTime(), listOf(d1, d2)))
+            2 -> history.add(Pair(getCurrentTime(), listOf(d1, d2, d3)))
+            3 -> history.add(Pair(getCurrentTime(), listOf(d1, d2, d3, d4)))
+            4 -> history.add(Pair(getCurrentTime(), listOf(d1, d2, d3, d4, d5)))
+            5 -> history.add(Pair(getCurrentTime(), listOf(d1, d2, d3, d4, d5, d6)))
         }
-        if(numbersSpinner.selectedItemPosition === 1 ) {
-            val now = LocalDateTime.now()
-            var formatter = DateTimeFormatter
-                    .ofPattern("HH:mm:ss")
-            hhistory.add(Pair(formatter.format(now), listOf(d1, d2)))
-        }
-        if(numbersSpinner.selectedItemPosition === 2 ) {
-            val now = LocalDateTime.now()
-            var formatter = DateTimeFormatter
-                    .ofPattern("HH:mm:ss")
-            hhistory.add(Pair(formatter.format(now), listOf(d1, d2, d3)))
-        }
-        if(numbersSpinner.selectedItemPosition === 3 ) {
-            val now = LocalDateTime.now()
-            var formatter = DateTimeFormatter
-                    .ofPattern("HH:mm:ss")
-            hhistory.add(Pair(formatter.format(now), listOf(d1, d2, d3, d4)))
-        }
-        if(numbersSpinner.selectedItemPosition === 4 ) {
-            val now = LocalDateTime.now()
-            var formatter = DateTimeFormatter
-                    .ofPattern("HH:mm:ss")
-            hhistory.add(Pair(formatter.format(now), listOf(d1, d2, d3, d4, d5)))
-        }
-        if(numbersSpinner.selectedItemPosition === 5 ) {
-            val now = LocalDateTime.now()
-            var formatter = DateTimeFormatter
-                    .ofPattern("HH:mm:ss")
-            hhistory.add(Pair(formatter.format(now), listOf(d1, d2, d3, d4, d5, d6)))
-        }
-        //mHistory.add(Pair(d1, d2))
-        updateHistory()
+
+        val intent = Intent(this, HistoryActivity::class.java)
+        intent.putExtra("history", history.toTypedArray())
+
+        //updateHistory()
     }
 
     private fun updateHistory() {
         var s = " "
-        //mHistory.forEach { p -> val e1 = p.first; val e2 = p.second
-                                //s += "$e1 -$e2\n" }
 
-        hhistory.forEach { p -> val e1 = p.first; val e2 = p.second
+        history.forEach { p -> val e1 = p.first; val e2 = p.second
             s += "$e1 $e2\n" }
 
         tvHistory.text = s
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun getCurrentTime(): String {
+        val now = LocalDateTime.now()
+        var formatter = DateTimeFormatter
+                .ofPattern("HH:mm:ss")
+        return formatter.format(now)
+    }
+
     fun clearHistory(view: View) {
-        hhistory.clear()
+        history.clear()
         updateHistory()
     }
 
