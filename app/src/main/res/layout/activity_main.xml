@@ -112,21 +112,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_toRightOf="@+id/btnRoll"/>
-        <TextView
-        android:id="@+id/tvHistory"
-        android:layout_below="@+id/btnRoll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/btnGoToHistory"
-        android:layout_centerHorizontal="true"
-        android:text="History"/>
-
-
         <Button
         android:id="@+id/btnGoToHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="clear"
+        android:text="History"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

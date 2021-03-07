@@ -1,4 +1,4 @@
-package com.example.dices.GUI
+    package com.example.dices.GUI
 
 import android.content.Intent
 import android.os.Build
@@ -33,7 +33,8 @@ class   MainActivity : AppCompatActivity() {
 
         btnGoToHistory.setOnClickListener {
             val intent = Intent(this, HistoryActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("history", history.toTypedArray())
+            startActivityForResult(intent, 5)
         }
 
 
@@ -45,6 +46,7 @@ class   MainActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 //TODO("Not yet implemented")
             }
+
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (position+1 === numbers[0]){
@@ -127,20 +129,6 @@ class   MainActivity : AppCompatActivity() {
             4 -> history.add(Pair(getCurrentTime(), listOf(d1, d2, d3, d4, d5)))
             5 -> history.add(Pair(getCurrentTime(), listOf(d1, d2, d3, d4, d5, d6)))
         }
-
-        val intent = Intent(this, HistoryActivity::class.java)
-        intent.putExtra("history", history.toTypedArray())
-
-        //updateHistory()
-    }
-
-    private fun updateHistory() {
-        var s = " "
-
-        history.forEach { p -> val e1 = p.first; val e2 = p.second
-            s += "$e1 $e2\n" }
-
-        tvHistory.text = s
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -151,13 +139,16 @@ class   MainActivity : AppCompatActivity() {
         return formatter.format(now)
     }
 
-    fun clearHistory(view: View) {
-        history.clear()
-        updateHistory()
-    }
-
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.d(TAG, "History Saved")
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 5) {
+            if (resultCode == 10)
+                history.clear()
+        }
     }
 }
