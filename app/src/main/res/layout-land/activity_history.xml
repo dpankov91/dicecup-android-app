@@ -9,40 +9,54 @@
 
     <ListView
         android:id="@+id/lvHistory"
-        android:layout_width="595dp"
-        android:layout_height="409dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="120dp"
-        android:layout_height="415dp"
+        android:layout_width="378dp"
+        android:layout_height="269dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/lvHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.992"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="107dp"
+        android:layout_height="288dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lvHistory"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="93dp"
-            android:layout_height="50dp"
+            android:layout_width="78dp"
+            android:layout_height="33dp"
             android:background="@color/diceboard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.407"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.323"
             app:srcCompat="@drawable/abc_vector_test"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="9dp"
-            tools:layout_editor_absoluteY="359dp" />
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/btnClearHistory"
-            android:layout_width="95dp"
-            android:layout_height="50dp"
+            android:layout_width="85dp"
+            android:layout_height="40dp"
             android:text="Clear"
             android:textColor="@color/white"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="13dp"
-            tools:layout_editor_absoluteY="293dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.657"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

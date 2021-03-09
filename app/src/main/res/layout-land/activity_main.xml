@@ -17,30 +17,40 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/diceboard"
-        android:layout_width="243dp"
-        android:layout_height="412dp"
+        android:layout_width="414dp"
+        android:layout_height="374dp"
         android:layout_below="@id/tvHeader"
         android:layout_centerHorizontal="true"
         android:background="@color/diceboard"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/imgD1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="83dp"
+            android:layout_height="85dp"
             android:layout_margin="20dp"
             android:adjustViewBounds="true"
             android:maxHeight="100dp"
             android:scaleType="centerInside"
             android:src="@drawable/d1"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imgD2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="83dp"
+            android:layout_height="85dp"
             android:layout_margin="20dp"
             android:layout_toRightOf="@id/imgD1"
             android:adjustViewBounds="true"
@@ -48,13 +58,17 @@
             android:scaleType="centerInside"
             android:src="@drawable/d2"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="121dp"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.422"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imgD3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="83dp"
+            android:layout_height="85dp"
             android:layout_below="@id/imgD1"
             android:layout_margin="20dp"
             android:adjustViewBounds="true"
@@ -62,13 +76,17 @@
             android:scaleType="centerInside"
             android:src="@drawable/d3"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="127dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.821"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imgD4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="83dp"
+            android:layout_height="85dp"
             android:layout_below="@id/imgD2"
             android:layout_margin="20dp"
             android:layout_toRightOf="@id/imgD3"
@@ -77,13 +95,17 @@
             android:scaleType="centerInside"
             android:src="@drawable/d4"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="121dp"
-            tools:layout_editor_absoluteY="265dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.048"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.432" />
 
         <ImageView
             android:id="@+id/imgD5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="83dp"
+            android:layout_height="85dp"
             android:layout_below="@id/imgD3"
             android:layout_margin="20dp"
             android:adjustViewBounds="true"
@@ -91,13 +113,17 @@
             android:scaleType="centerInside"
             android:src="@drawable/d5"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="120dp"
-            tools:layout_editor_absoluteY="127dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.429" />
 
         <ImageView
             android:id="@+id/imgD6"
-            android:layout_width="102dp"
-            android:layout_height="101dp"
+            android:layout_width="83dp"
+            android:layout_height="85dp"
             android:layout_below="@id/imgD4"
             android:layout_margin="20dp"
             android:layout_toRightOf="@id/imgD5"
@@ -106,15 +132,23 @@
             android:scaleType="centerInside"
             android:src="@drawable/d6"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="264dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.815"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.418" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="486dp"
-        android:layout_height="409dp"
+        android:layout_width="325dp"
+        android:layout_height="371dp"
         android:layout_below="@id/diceboard"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toEndOf="@+id/diceboard"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
 
@@ -125,8 +159,12 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/btnRoll"
-            tools:layout_editor_absoluteX="104dp"
-            tools:layout_editor_absoluteY="87dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.261" />
 
         <Button
             android:id="@+id/btnGoToHistory"
@@ -135,9 +173,13 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="History"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="145dp"
-            tools:layout_editor_absoluteY="180dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.442"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.498"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/btnRoll"
@@ -147,9 +189,12 @@
             android:layout_margin="10dp"
             android:onClick="onClickRoll"
             android:text="Roll"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="208dp"
-            tools:layout_editor_absoluteY="104dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.247" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
